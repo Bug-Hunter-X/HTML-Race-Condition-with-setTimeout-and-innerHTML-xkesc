@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is initially visible.
+  </div>
+  <button onclick="myFunction()">Click Me</button>
+
+  <script>
+    let divUpdated = false; // Added flag to track div update
+    function myFunction() {
+      document.getElementById("myDiv").innerHTML = "";
+      setTimeout(function(){ 
+        if(!divUpdated){
+          document.getElementById("myDiv").innerHTML = "This text appears after a delay";
+          divUpdated = true;
+        }
+      }, 3000); 
+    }
+  </script>
+</body>
+</html>
