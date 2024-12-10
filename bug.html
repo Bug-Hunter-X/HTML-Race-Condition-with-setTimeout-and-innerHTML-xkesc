@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is initially visible.
+  </div>
+  <button onclick="myFunction()">Click Me</button>
+
+  <script>
+    function myFunction() {
+      document.getElementById("myDiv").innerHTML = ""; //Empty the div
+      //document.getElementById("myDiv").remove();//This would remove the div completely
+      setTimeout(function(){ 
+        document.getElementById("myDiv").innerHTML = "This text appears after a delay";
+      }, 3000); 
+    }
+  </script>
+</body>
+</html>
